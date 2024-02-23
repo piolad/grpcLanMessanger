@@ -5,7 +5,7 @@ import message_pb2_grpc
 import grpc
 import socket
 
-SERVER_IP = "LOACLHOST"
+SERVER_IP = "localhost"
  
 def get_local_ip():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
