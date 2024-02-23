@@ -1,6 +1,6 @@
 # gRPC Messaging Application
 
-This gRPC Messaging Application is a simple powerful demonstration of a client-server architecture using gRPC and Protocol Buffers. I created it to learn and play around with gRPC in python.
+This gRPC Messaging Application is a simple demonstration of a client-server architecture using gRPC and Protocol Buffers. I created it to learn and play around with gRPC in python.
 
 ## Features
 
