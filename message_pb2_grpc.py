@@ -2,7 +2,6 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 import message_pb2 as message__pb2
 
 
@@ -22,7 +21,7 @@ class MessageServiceStub(object):
                 )
         self.HealthCheck = channel.unary_unary(
                 '/MessageService/HealthCheck',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                request_serializer=message__pb2.Empty.SerializeToString,
                 response_deserializer=message__pb2.StateMessage.FromString,
                 )
 
@@ -52,7 +51,7 @@ def add_MessageServiceServicer_to_server(servicer, server):
             ),
             'HealthCheck': grpc.unary_unary_rpc_method_handler(
                     servicer.HealthCheck,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    request_deserializer=message__pb2.Empty.FromString,
                     response_serializer=message__pb2.StateMessage.SerializeToString,
             ),
     }
@@ -94,7 +93,7 @@ class MessageService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/MessageService/HealthCheck',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            message__pb2.Empty.SerializeToString,
             message__pb2.StateMessage.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

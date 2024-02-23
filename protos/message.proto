@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-import "google/protobuf/empty.proto";
+
+message Empty {}
 
 message SimpleMessage {
     string sender = 1;
@@ -21,6 +22,6 @@ message StateMessage {
 
 service MessageService {
     rpc SendMessage(SimpleMessage) returns (StateMessage);
-    rpc HealthCheck(google.protobuf.Empty) returns (StateMessage);
+    rpc HealthCheck(Empty) returns (StateMessage);
 }
  
